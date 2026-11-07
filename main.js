@@ -13,11 +13,12 @@ app.listen(PORT, () => {
     console.log(`[HTTP Server] Listening on port ${PORT}`);
 });
 
-// ==================== ⚙️ RENDER ENVIRONMENT VARIABLES ====================
+// ==================== ⚙️ CONFIGURATION ====================
 const HOST = process.env.MC_HOST || "CraftySmpseason2.pixelforge.gg";
 const BOT_PASSWORD = process.env.MC_PASSWORD || "Gian2342341";
 const BOT_USERNAME_PREFIX = process.env.BOT_PREFIX || "Spikelol";
-const CHAT_SPAM_MESSAGE = process.env.SPAM_MESSAGE || "Spikelol Raid active! .gg/spikelol";
+// ⚠️ Yahan dhyan de: Message ke aage-peeche quotes (" ") hone chahiye!
+const CHAT_SPAM_MESSAGE = "SPIKE.LOL ON TOP! THIS SERVER RAID BY SPIKE.LOL FREE TOOLS AND MORE RAID SYSTEM BEST JOIN https://discord.gg/pT8RGGvtZg";
 
 console.log(`[BOT SYSTEM] Initializing bot packets to ${HOST}`);
 
@@ -34,7 +35,7 @@ setInterval(function () {
         
         const spam = () => {
             try {
-                bot.chat(SPIKE.LOL ON TOP! THIS SERVER RAID BY SPIKE.LOL FREE TOOLS AND MORE RAID SYSTEM BEST JOIN https://discord.gg/pT8RGGvtZg);
+                bot.chat(CHAT_SPAM_MESSAGE);
             } catch (e) {}
         };
         setInterval(spam, 3000);
