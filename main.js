@@ -1,7 +1,7 @@
 const mineflayer = require('mineflayer');
 const express = require('express');
 
-// ==================== 🌐 EXPRESS SERVER (Render Port Handling) ====================
+// ==================== 🌐 EXPRESS SERVER ====================
 const app = express();
 const PORT = process.env.PORT || 10000;
 
@@ -10,14 +10,14 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`[HTTP Server] Listening and active on Render port ${PORT}`);
+    console.log(`[HTTP Server] Listening on port ${PORT}`);
 });
 
-// ==================== 🤖 MINECRAFT BOT CONFIG & LOGIC ====================
-const HOST = "CraftySmpseason2.pixelforge.gg"; // Tera server IP
-const BOT_PASSWORD = "Gian2342341";             // Tera password
-const BOT_USERNAME_PREFIX = "Spikelol";         // Bot name prefix
-const CHAT_SPAM_MESSAGE = "Spikelol Raid active! .gg/spikelol"; // Tera spam message
+// ==================== ⚙️ RENDER ENVIRONMENT VARIABLES ====================
+const HOST = process.env.MC_HOST || "CraftySmpseason2.pixelforge.gg";
+const BOT_PASSWORD = process.env.MC_PASSWORD || "Gian2342341";
+const BOT_USERNAME_PREFIX = process.env.BOT_PREFIX || "Spikelol";
+const CHAT_SPAM_MESSAGE = process.env.SPAM_MESSAGE || "Spikelol Raid active! .gg/spikelol";
 
 console.log(`[BOT SYSTEM] Initializing bot packets to ${HOST}`);
 
