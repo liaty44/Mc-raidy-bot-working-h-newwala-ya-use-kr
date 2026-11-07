@@ -17,8 +17,7 @@ app.listen(PORT, () => {
 const HOST = process.env.MC_HOST || "CraftySmpseason2.pixelforge.gg";
 const BOT_PASSWORD = process.env.MC_PASSWORD || "Gian2342341";
 const BOT_USERNAME_PREFIX = process.env.BOT_PREFIX || "Spikelol";
-// ⚠️ Yahan dhyan de: Message ke aage-peeche quotes (" ") hone chahiye!
-const CHAT_SPAM_MESSAGE = "SPIKE.LOL ON TOP! THIS SERVER RAID BY SPIKE.LOL FREE TOOLS AND MORE RAID SYSTEM BEST JOIN https://discord.gg/pT8RGGvtZg";
+const CHAT_SPAM_MESSAGE = process.env.SPAM_MESSAGE || "SPIKE.LOL ON TOP! THIS SERVER RAID BY SPIKE.LOL FREE TOOLS AND MORE RAID SYSTEM BEST JOIN https://discord.gg/pT8RGGvtZg";
 
 console.log(`[BOT SYSTEM] Initializing bot packets to ${HOST}`);
 
@@ -26,6 +25,7 @@ setInterval(function () {
     const bot = mineflayer.createBot({
         host: HOST,
         username: `${BOT_USERNAME_PREFIX}_${generateName(5)}`,
+        version: "1.20.2" // ⚠️ Yahan apne server ka exact version daal dena (jaise "1.19.4", "1.20.4", etc.)
     });
 
     bot.on('login', () => {
